@@ -1,10 +1,18 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { ExternalLink, ArrowUpRight, Check, AlertCircle } from 'lucide-react'
+import {
+  ExternalLink,
+  ArrowUpRight,
+  Check,
+  AlertCircle,
+} from 'lucide-react'
 import './styles.css'
 
-const hrcSearch = 'https://www.redweek.com/resort/P6386-hyatt-vacation-club-at-kaanapali-beach/timeshare-resales?type=resales&available_type=by_week&start_week=week_25&end_week=week_35&unit_type_id=574&use=Annual&ownership_type=Deeded&bedrooms=2&sleeps=6&sort=week'
-const naneaSearch = 'https://www.redweek.com/resort/P6462-the-westin-nanea-ocean-villas/timeshare-resales?type=resales&available_type=by_week&unit_type_id=223&use=Annual&ownership_type=Deeded&bedrooms=1&sleeps=4'
+const hrcSearch =
+  'https://www.redweek.com/resort/P6386-hyatt-vacation-club-at-kaanapali-beach/timeshare-resales?type=resales&available_type=by_week&start_week=week_25&end_week=week_35&unit_type_id=574&use=Annual&ownership_type=Deeded&bedrooms=2&sleeps=6&sort=week'
+
+const naneaSearch =
+  'https://www.redweek.com/resort/P6462-the-westin-nanea-ocean-villas/timeshare-resales?type=resales&available_type=by_week&unit_type_id=223&use=Annual&ownership_type=Deeded&bedrooms=1&sleeps=4'
 
 const hrcComps = [
   {
@@ -77,6 +85,7 @@ function CompCard({ comp }) {
           )}
 
           <h3>{comp.label}</h3>
+
           <p>{comp.meta}</p>
 
           {comp.note && (
@@ -87,14 +96,48 @@ function CompCard({ comp }) {
           )}
         </div>
 
-        <div className="comp-price">{comp.price}</div>
+        <div className="comp-price">
+          {comp.price}
+        </div>
       </div>
 
       <div className="comp-footer">
-        <span>RedWeek posting {comp.id}</span>
+        <span>
+          RedWeek posting {comp.id}
+        </span>
+
         <ExternalButton href={comp.href} />
       </div>
     </article>
+  )
+}
+
+function SectionHeader({
+  eyebrow,
+  title,
+  href,
+  linkLabel,
+}) {
+  return (
+    <div className="section-head">
+      <div>
+        <div className="eyebrow">
+          {eyebrow}
+        </div>
+
+        <h2>{title}</h2>
+      </div>
+
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="section-link"
+      >
+        {linkLabel}
+        <ExternalLink size={14} />
+      </a>
+    </div>
   )
 }
 
@@ -109,46 +152,81 @@ function App() {
             Maui resale review · October 2026
           </div>
 
-          <h1>What are the Maui timeshares worth?</h1>
+          <h1>
+            What are the Maui
+            <br />
+            timeshares worth?
+          </h1>
+
+          <p className="hero-copy">
+            Current RedWeek resale listings compared against
+            the existing Maui ownership.
+          </p>
 
           <div className="hero-rule" />
         </section>
 
         {/* SUMMARY */}
         <section className="stats">
+
           <div className="stat-card featured">
             <span>Working gross value</span>
+
             <strong>~$180k</strong>
+
             <small>
-              Scenario using ~$40k per HRC week + ~$10k per Nanea week
+              HRC: 4 weeks × ~$40k
+              <br />
+              Nanea: 2 weeks × ~$10k
             </small>
           </div>
 
           <div className="stat-card">
             <span>Annual maintenance</span>
-            <strong>~$20k</strong>
+
+            <strong>~$22k</strong>
+
             <small>
-              Current combined recurring fees
+              HRC: ~$18k
+              <br />
+              Nanea: ~$4k
             </small>
           </div>
 
           <div className="stat-card">
             <span>Potential annual savings</span>
-            <strong>~$20k</strong>
+
+            <strong>~$22k</strong>
+
             <small>
               If all Maui ownership is sold
             </small>
           </div>
+
         </section>
 
-        {/* VALUATION */}
+        {/* OWNERSHIP / VALUATION */}
         <section className="section valuation">
+
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">
+                At a glance
+              </div>
+
+              <h2>
+                Ownership & valuation
+              </h2>
+            </div>
+          </div>
+
           <div className="table-wrap">
             <table>
               <thead>
                 <tr>
                   <th>Ownership</th>
                   <th>Weeks</th>
+                  <th>Count</th>
                   <th>Benchmark</th>
                   <th>Annual maintenance</th>
                   <th>Gross benchmark</th>
@@ -156,98 +234,121 @@ function App() {
               </thead>
 
               <tbody>
-                <tr>
-                  <td>
-                    <strong>HRC #1</strong>
-                  </td>
-                  <td>29 + 30</td>
-                  <td>~$40,000 / week*</td>
-                  <td>~$9,000</td>
-                  <td>~$80,000*</td>
-                </tr>
 
                 <tr>
                   <td>
-                    <strong>HRC #2</strong>
+                    <strong>HRC</strong>
                   </td>
+
                   <td>29 + 30</td>
-                  <td>~$40,000 / week*</td>
-                  <td>~$9,000</td>
-                  <td>~$80,000*</td>
+
+                  <td>2 timeshares</td>
+
+                  <td>
+                    ~$40,000 / week*
+                  </td>
+
+                  <td>
+                    ~$18,000 / year
+                  </td>
+
+                  <td>
+                    <strong>~$160,000*</strong>
+                  </td>
                 </tr>
 
                 <tr>
                   <td>
                     <strong>Nanea</strong>
                   </td>
+
                   <td>29 + 30</td>
-                  <td>~$10,000 / week</td>
-                  <td>~$2,000</td>
-                  <td>~$20,000</td>
+
+                  <td>1 timeshare</td>
+
+                  <td>
+                    ~$10,000 / week
+                  </td>
+
+                  <td>
+                    ~$4,000 / year
+                  </td>
+
+                  <td>
+                    <strong>~$20,000</strong>
+                  </td>
                 </tr>
 
                 <tr className="total">
                   <td>
                     <strong>Total</strong>
                   </td>
+
                   <td>
                     <strong>6 weeks</strong>
                   </td>
-                  <td>—</td>
+
                   <td>
-                    <strong>~$20,000 / year</strong>
+                    <strong>3 timeshares</strong>
                   </td>
+
+                  <td>—</td>
+
+                  <td>
+                    <strong>~$22,000 / year</strong>
+                  </td>
+
                   <td>
                     <strong>~$180,000*</strong>
                   </td>
                 </tr>
+
               </tbody>
             </table>
           </div>
 
           <p className="table-note">
-            *The $40k HRC benchmark is based on the current Week 29
-            ocean-view listing. Week 30 should be verified with a direct
-            current comp before treating the $180k figure as a firm valuation.
+            *The $40k HRC benchmark comes from the current
+            Week 29 2BR ocean-view listing. Week 30 should
+            be verified with a direct current comp before
+            treating the $180k figure as a firm valuation.
           </p>
+
         </section>
 
         {/* HRC */}
         <section className="section">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">Hyatt</div>
-              <h2>Hyatt Vacation Club at Ka'anapali Beach</h2>
-            </div>
 
-            <a
-              href={hrcSearch}
-              target="_blank"
-              rel="noreferrer"
-              className="section-link"
-            >
-              HRC filtered search
-              <ExternalLink size={14} />
-            </a>
-          </div>
+          <SectionHeader
+            eyebrow="Hyatt"
+            title="Hyatt Vacation Club at Ka'anapali Beach"
+            href={hrcSearch}
+            linkLabel="HRC filtered search"
+          />
 
           <div className="cards">
-            {hrcComps.map((c) => (
-              <CompCard key={c.id} comp={c} />
+            {hrcComps.map((comp) => (
+              <CompCard
+                key={comp.id}
+                comp={comp}
+              />
             ))}
           </div>
 
           <div className="callout">
+
             <div className="callout-title">
               HRC benchmark
             </div>
 
             <p>
-              <strong>~$40,000 per week</strong> is the most
-              defensible working benchmark from the current listings.
-              The $64.5k oceanfront listing is useful as an upper
-              reference, but it is not the same view.
+              <strong>~$40,000 per week</strong> is the
+              strongest current working benchmark from
+              the available listings. The $64.5k oceanfront
+              listing is an upper reference, but it is not
+              apples-to-apples with ocean view.
             </p>
+
           </div>
 
           <a
@@ -259,43 +360,41 @@ function App() {
             Open HRC filtered comps
             <ArrowUpRight size={16} />
           </a>
+
         </section>
 
         {/* NANEA */}
         <section className="section">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">Westin</div>
-              <h2>The Westin Nanea Ocean Villas</h2>
-            </div>
 
-            <a
-              href={naneaSearch}
-              target="_blank"
-              rel="noreferrer"
-              className="section-link"
-            >
-              Nanea filtered search
-              <ExternalLink size={14} />
-            </a>
-          </div>
+          <SectionHeader
+            eyebrow="Westin"
+            title="The Westin Nanea Ocean Villas"
+            href={naneaSearch}
+            linkLabel="Nanea filtered search"
+          />
 
           <div className="cards">
-            {naneaComps.map((c) => (
-              <CompCard key={c.id} comp={c} />
+            {naneaComps.map((comp) => (
+              <CompCard
+                key={comp.id}
+                comp={comp}
+              />
             ))}
           </div>
 
           <div className="callout">
+
             <div className="callout-title">
               Nanea benchmark
             </div>
 
             <p>
-              <strong>~$10,000 per week</strong> is the closest
-              current comp because the listing is a 1BR, annual,
-              deeded, high-season floating ownership with resort view.
+              <strong>~$10,000 per week</strong> is the
+              closest current comp because the listing is
+              a 1BR, annual, deeded, high-season ownership
+              with resort view.
             </p>
+
           </div>
 
           <a
@@ -307,11 +406,74 @@ function App() {
             Open Nanea filtered comps
             <ArrowUpRight size={16} />
           </a>
+
         </section>
+
+        {/* DECISION */}
+        <section className="section decision">
+
+          <div className="eyebrow">
+            The question
+          </div>
+
+          <h2>
+            Sell Maui or keep it?
+          </h2>
+
+          <div className="decision-grid">
+
+            <div className="decision-card">
+              <span>Potential gross proceeds</span>
+              <strong>~$180k</strong>
+              <p>
+                Based on current resale asking prices
+                and the working benchmarks above.
+              </p>
+            </div>
+
+            <div className="decision-card">
+              <span>Maintenance eliminated</span>
+              <strong>~$22k / year</strong>
+              <p>
+                Recurring maintenance that would no
+                longer be owed if all Maui ownership
+                is sold.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="callout">
+
+            <div className="callout-title">
+              Important
+            </div>
+
+            <p>
+              These are <strong>asking prices</strong>,
+              not guaranteed sale prices or net proceeds.
+              Selling costs, negotiation, closing costs,
+              and transfer fees could reduce the amount
+              ultimately received.
+            </p>
+
+          </div>
+
+        </section>
+
+        <footer>
+          <p>
+            Resale data sourced from current RedWeek
+            listings. Values shown are working estimates
+            for comparison purposes.
+          </p>
+        </footer>
 
       </main>
     </div>
   )
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+createRoot(
+  document.getElementById('root')
+).render(<App />)
