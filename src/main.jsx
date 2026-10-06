@@ -75,21 +75,21 @@ function ExternalButton({ href, children = "View listing" }) {
 function CompCard({ comp }) {
     return (
         <article
-            className={`flex h-full flex-col rounded-2xl border p-5 ${
+            className={`relative flex h-full flex-col rounded-2xl border p-5 ${
                 comp.direct
                     ? "border-zinc-300 bg-zinc-50"
                     : "border-zinc-200 bg-white"
             }`}
         >
+            {comp.direct && (
+                <div className="absolute -right-2 -top-3 inline-flex items-center gap-1 rounded-full bg-zinc-900 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm">
+                    <Check size={12} />
+                    closest direct comp
+                </div>
+            )}
+
             <div className="flex flex-1 items-start justify-between gap-4">
                 <div className="min-w-0">
-                    {comp.direct && (
-                        <div className="mb-2 inline-flex items-center gap-1 rounded-full bg-zinc-900 px-2 py-1 text-xs font-medium text-white">
-                            <Check size={12} />
-                            closest direct comp
-                        </div>
-                    )}
-
                     <h3 className="text-base font-semibold text-zinc-900">
                         {comp.label}
                     </h3>
@@ -142,7 +142,6 @@ function App() {
 
                 {/* SUMMARY */}
                 <section className="mb-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
-
                     <div className="w-full rounded-2xl border border-zinc-200 bg-zinc-950 p-6 text-white sm:p-7">
                         <span className="text-sm font-medium text-zinc-400">
                             Working gross value
@@ -174,7 +173,6 @@ function App() {
                             Westin: ~$4k
                         </small>
                     </div>
-
                 </section>
 
                 {/* OWNERSHIP / VALUATION */}
@@ -215,23 +213,18 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Hyatt</strong>
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         29 + 30
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         2 timeshares
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$40,000 / week
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$18,000 / year
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>~$160,000*</strong>
                                     </td>
@@ -241,23 +234,18 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Westin</strong>
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         29 + 30
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         1 timeshare
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$10,000 / week
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$4,000 / year
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>~$20,000</strong>
                                     </td>
@@ -267,23 +255,18 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Total</strong>
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>6 weeks</strong>
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>3 timeshares</strong>
                                     </td>
-
                                     <td className="px-5 py-5 text-zinc-500">
                                         —
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>~$22,000 / year</strong>
                                     </td>
-
                                     <td className="px-5 py-5">
                                         <strong>~$180,000*</strong>
                                     </td>
@@ -317,7 +300,7 @@ function App() {
                         {hrcComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
                         ))}
-                    </div>                    
+                    </div>
                 </section>
 
                 {/* WESTIN */}
