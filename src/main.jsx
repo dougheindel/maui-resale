@@ -11,8 +11,14 @@ import {
 const hrcSearch =
     "https://www.redweek.com/resort/P6386-hyatt-vacation-club-at-kaanapali-beach/timeshare-resales?type=resales&available_type=by_week&start_week=week_25&end_week=week_35&unit_type_id=574&use=Annual&ownership_type=Deeded&bedrooms=2&sleeps=6&sort=week";
 
+const hrcHistorical =
+    "https://www.redweek.com/whats-my-timeshare-worth/P6386-hyatt-vacation-club-at-kaanapali-beach/sale-historical";
+
 const naneaSearch =
     "https://www.redweek.com/resort/P6462-the-westin-nanea-ocean-villas/timeshare-resales?type=resales&available_type=by_week&unit_type_id=223&use=Annual&ownership_type=Deeded&bedrooms=1&sleeps=4";
+
+const naneaHistorical =
+    "https://www.redweek.com/whats-my-timeshare-worth/P6462-the-westin-nanea-ocean-villas/sale-historical";
 
 const hrcComps = [
     {
@@ -301,6 +307,28 @@ function App() {
                             <CompCard key={comp.id} comp={comp} />
                         ))}
                     </div>
+
+                    <div className="flex flex-wrap items-center gap-4">
+                        <a
+                            href={hrcSearch}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
+                        >
+                            HRC filtered search
+                            <ExternalLink size={14} />
+                        </a>
+                    
+                        <a
+                            href={hrcHistorical}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
+                        >
+                            Historical sales
+                            <ExternalLink size={14} />
+                        </a>
+                    </div>                    
                 </section>
 
                 {/* WESTIN */}
@@ -328,6 +356,28 @@ function App() {
                             <CompCard key={comp.id} comp={comp} />
                         ))}
                     </div>
+
+                    <div className="flex flex-wrap items-center gap-4">
+                        <a
+                            href={naneaSearch}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
+                        >
+                            Nanea filtered search
+                            <ExternalLink size={14} />
+                        </a>
+                    
+                        <a
+                            href={naneaHistorical}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
+                        >
+                            Historical sales
+                            <ExternalLink size={14} />
+                        </a>
+                    </div>                    
                 </section>
 
             </main>
