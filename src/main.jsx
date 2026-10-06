@@ -144,7 +144,7 @@ function App() {
                 <section className="mb-16 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="w-full rounded-2xl border border-zinc-200 bg-zinc-950 p-6 text-white sm:p-7">
                         <span className="text-sm font-medium text-zinc-400">
-                            Working gross value
+                            Working gross benchmark
                         </span>
 
                         <strong className="mt-2 block text-4xl font-semibold tracking-tight sm:text-5xl">
