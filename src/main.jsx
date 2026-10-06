@@ -158,11 +158,6 @@ function App() {
             timeshares worth?
           </h1>
 
-          <p className="hero-copy">
-            Current RedWeek resale listings compared against
-            the existing Maui ownership.
-          </p>
-
           <div className="hero-rule" />
         </section>
 
