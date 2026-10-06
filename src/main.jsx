@@ -276,18 +276,6 @@ function App() {
                         ))}
                     </div>
 
-                    <div className="callout">
-                        <div className="callout-title">HRC benchmark</div>
-
-                        <p>
-                            <strong>~$40,000 per week</strong> is the strongest
-                            current working benchmark from the available
-                            listings. The $64.5k oceanfront listing is an upper
-                            reference, but it is not apples-to-apples with ocean
-                            view.
-                        </p>
-                    </div>
-
                     <a
                         className="wide-link"
                         href={hrcSearch}
