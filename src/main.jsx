@@ -131,9 +131,7 @@ function App() {
                     </div>
 
                     <h1>
-                        What are the Maui
-                        <br />
-                        timeshares worth?
+                        Maui timeshare valuations.
                     </h1>
 
                     <div className="hero-rule" />
