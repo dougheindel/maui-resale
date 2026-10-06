@@ -175,9 +175,9 @@ function App() {
             <strong>~$180k</strong>
 
             <small>
-              HRC: 4 weeks × ~$40k
+              Hyatt: 4 weeks × ~$40k
               <br />
-              Nanea: 2 weeks × ~$10k
+              Westin: 2 weeks × ~$10k
             </small>
           </div>
 
@@ -187,9 +187,9 @@ function App() {
             <strong>~$22k</strong>
 
             <small>
-              HRC: ~$18k
+              Hyatt: ~$18k
               <br />
-              Nanea: ~$4k
+              Westin: ~$4k
             </small>
           </div>
 
