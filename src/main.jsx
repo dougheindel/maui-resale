@@ -91,14 +91,14 @@ function App() {
               <div className="eyebrow">Hyatt</div>
               <h2>Hyatt Vacation Club at Ka'anapali Beach</h2>
             </div>
-            <a href={hrcSearch} target="_blank" rel="noreferrer">HRC filtered search <ExternalLink size={14} /></a>
+            <a href={hrcSearch} target="_blank" rel="noreferrer className="ml-auto"">HRC filtered search <ExternalLink size={14} /></a>
           </div>
           <div className="cards">{hrcComps.map((c) => <CompCard key={c.id} comp={c} />)}</div>
           <div className="callout">
             <div className="callout-title">HRC benchmark</div>
             <p><strong>~$40,000 per week</strong> is the most defensible working benchmark from the current listings. The $64.5k oceanfront listing is useful as an upper reference, but it is not the same view.</p>
           </div>
-          <a className="wide-link" href={hrcSearch} target="_blank" rel="noreferrer">Open all HRC filtered comps <ArrowUpRight size={16} /></a>
+          <a className="wide-link" href={hrcSearch} target="_blank" rel="noreferrer">Open HRC filtered comps <ArrowUpRight size={16} /></a>
         </section>
 
         <section className="section">
@@ -110,12 +110,11 @@ function App() {
             <a href={naneaSearch} target="_blank" rel="noreferrer">Nanea filtered search <ExternalLink size={14} /></a>                        
           </div>
           <div className="cards">{naneaComps.map((c) => <CompCard key={c.id} comp={c} />)}</div>
-          <a className="wide-link" href={naneaSearch} target="_blank" rel="noreferrer">Open all Nanea filtered comps <ArrowUpRight size={16} /></a>
+          <a className="wide-link" href={naneaSearch} target="_blank" rel="noreferrer className="ml-auto"">Open Nanea filtered comps <ArrowUpRight size={16} /></a>
         </section>
 
       </main>
 
-      <footer>Prepared from current RedWeek resale listings. This is a market snapshot, not an appraisal.</footer>
     </div>
   )
 }
