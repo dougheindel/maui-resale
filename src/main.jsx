@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { ExternalLink, ArrowUpRight, Check, AlertCircle } from "lucide-react";
-import "./styles.css";
 
 const hrcSearch =
     "https://www.redweek.com/resort/P6386-hyatt-vacation-club-at-kaanapali-beach/timeshare-resales?type=resales&available_type=by_week&start_week=week_25&end_week=week_35&unit_type_id=574&use=Annual&ownership_type=Deeded&bedrooms=2&sleeps=6&sort=week";
@@ -138,29 +137,33 @@ function App() {
                 </section>
 
                 {/* SUMMARY */}
-                <section className="stats">
-                    <div className="stat-card featured">
-                        <span>Working gross value</span>
+                <section className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="w-full">
+                        <div className="stat-card featured h-full">
+                            <span>Working gross value</span>
 
-                        <strong>~$180k</strong>
+                            <strong>~$180k</strong>
 
-                        <small>
-                            Hyatt: 4 weeks × ~$40k
-                            <br />
-                            Westin: 2 weeks × ~$10k
-                        </small>
+                            <small>
+                                Hyatt: 4 weeks × ~$40k
+                                <br />
+                                Westin: 2 weeks × ~$10k
+                            </small>
+                        </div>
                     </div>
 
-                    <div className="stat-card">
-                        <span>Annual maintenance</span>
+                    <div className="w-full">
+                        <div className="stat-card h-full">
+                            <span>Annual maintenance</span>
 
-                        <strong>~$22k</strong>
+                            <strong>~$22k</strong>
 
-                        <small>
-                            Hyatt: ~$18k
-                            <br />
-                            Westin: ~$4k
-                        </small>
+                            <small>
+                                Hyatt: ~$18k
+                                <br />
+                                Westin: ~$4k
+                            </small>
+                        </div>
                     </div>
                 </section>
 
@@ -252,7 +255,6 @@ function App() {
 
                 {/* HYATT */}
                 <section className="section">
-
                     <div className="cards">
                         {hrcComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
@@ -272,7 +274,6 @@ function App() {
 
                 {/* WESTIN */}
                 <section className="section">
-
                     <div className="cards">
                         {naneaComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
@@ -288,8 +289,7 @@ function App() {
                         Open Nanea filtered comps
                         <ArrowUpRight size={16} />
                     </a>
-                </section>                
-               
+                </section>
             </main>
         </div>
     );
