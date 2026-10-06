@@ -317,17 +317,7 @@ function App() {
                         {hrcComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
                         ))}
-                    </div>
-
-                    <a
-                        className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                        href={hrcSearch}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Open HRC filtered comps
-                        <ArrowUpRight size={16} />
-                    </a>
+                    </div>                    
                 </section>
 
                 {/* WESTIN */}
@@ -355,16 +345,6 @@ function App() {
                             <CompCard key={comp.id} comp={comp} />
                         ))}
                     </div>
-
-                    <a
-                        className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                        href={naneaSearch}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Open Nanea filtered comps
-                        <ArrowUpRight size={16} />
-                    </a>
                 </section>
 
             </main>
