@@ -128,19 +128,49 @@ function CompCard({ comp }) {
     );
 }
 
-function BenchmarkInput({ value, onChange }) {
+function BenchmarkSlider({
+    label,
+    value,
+    min,
+    max,
+    onChange,
+}) {
     return (
-        <div className="flex items-center gap-1.5">
-            <span className="text-zinc-500">~$</span>
+        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+            <div className="flex items-end justify-between gap-4">
+                <div>
+                    <div className="text-sm font-medium text-zinc-500">
+                        {label} benchmark
+                    </div>
+
+                    <div className="mt-1 text-2xl font-semibold tracking-tight text-zinc-950">
+                        ${value.toLocaleString()}
+                        <span className="ml-1 text-sm font-normal text-zinc-500">
+                            / week
+                        </span>
+                    </div>
+                </div>
+
+                <span className="text-xs text-zinc-400">
+                    Current listings
+                </span>
+            </div>
+
             <input
-                type="number"
-                min="0"
+                type="range"
+                min={min}
+                max={max}
                 step="1000"
                 value={value}
                 onChange={(e) => onChange(Number(e.target.value))}
-                className="w-28 rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-sm font-medium text-zinc-900 outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-100"
+                className="mt-5 w-full cursor-pointer accent-zinc-900"
+                aria-label={`${label} benchmark per week`}
             />
-            <span className="whitespace-nowrap text-zinc-500">/ week</span>
+
+            <div className="mt-2 flex justify-between text-xs text-zinc-400">
+                <span>${min.toLocaleString()}</span>
+                <span>${max.toLocaleString()}</span>
+            </div>
         </div>
     );
 }
@@ -215,6 +245,26 @@ function App() {
                         </h2>
                     </div>
 
+                    {/* BENCHMARK SLIDERS */}
+                    <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <BenchmarkSlider
+                            label="Hyatt"
+                            value={hrcBenchmark}
+                            min={19000}
+                            max={99000}
+                            onChange={setHrcBenchmark}
+                        />
+
+                        <BenchmarkSlider
+                            label="Westin"
+                            value={naneaBenchmark}
+                            min={5000}
+                            max={10000}
+                            onChange={setNaneaBenchmark}
+                        />
+                    </div>
+
+                    {/* TABLE */}
                     <div className="overflow-x-auto rounded-2xl border border-zinc-200">
                         <table className="w-full min-w-[800px] text-sm">
                             <thead>
@@ -229,7 +279,7 @@ function App() {
                                         Count
                                     </th>
                                     <th className="px-5 py-4 font-medium text-zinc-500">
-                                        Benchmark / week
+                                        Benchmark
                                     </th>
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Annual maintenance
@@ -254,11 +304,8 @@ function App() {
                                         2 timeshares
                                     </td>
 
-                                    <td className="px-5 py-5">
-                                        <BenchmarkInput
-                                            value={hrcBenchmark}
-                                            onChange={setHrcBenchmark}
-                                        />
+                                    <td className="px-5 py-5 text-zinc-600">
+                                        ~${hrcBenchmark.toLocaleString()} / week
                                     </td>
 
                                     <td className="px-5 py-5 text-zinc-600">
@@ -285,11 +332,8 @@ function App() {
                                         1 timeshare
                                     </td>
 
-                                    <td className="px-5 py-5">
-                                        <BenchmarkInput
-                                            value={naneaBenchmark}
-                                            onChange={setNaneaBenchmark}
-                                        />
+                                    <td className="px-5 py-5 text-zinc-600">
+                                        ~${naneaBenchmark.toLocaleString()} / week
                                     </td>
 
                                     <td className="px-5 py-5 text-zinc-600">
@@ -333,6 +377,12 @@ function App() {
                             </tbody>
                         </table>
                     </div>
+
+                    <p className="mt-3 text-xs leading-5 text-zinc-400">
+                        * Working gross benchmark based on the selected
+                        per-week benchmark. Not a guaranteed sale price or
+                        net proceeds.
+                    </p>
                 </section>
 
                 {/* HYATT */}
