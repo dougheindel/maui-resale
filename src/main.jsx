@@ -290,16 +290,6 @@ function App() {
                                 Hyatt Vacation Club at Ka'anapali Beach
                             </h2>
                         </div>
-
-                        <a
-                            href={hrcSearch}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
-                        >
-                            HRC filtered search
-                            <ExternalLink size={14} />
-                        </a>
                     </div>
 
                     <div className="flex flex-col gap-4">
@@ -339,16 +329,6 @@ function App() {
                                 The Westin Nanea Ocean Villas
                             </h2>
                         </div>
-
-                        <a
-                            href={naneaSearch}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 hover:text-zinc-900"
-                        >
-                            Nanea filtered search
-                            <ExternalLink size={14} />
-                        </a>
                     </div>
 
                     <div className="flex flex-col gap-4">
