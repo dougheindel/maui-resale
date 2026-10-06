@@ -332,53 +332,8 @@ function App() {
                         Open Nanea filtered comps
                         <ArrowUpRight size={16} />
                     </a>
-                </section>
-
-                {/* DECISION */}
-                <section className="section decision">
-                    <div className="eyebrow">The question</div>
-
-                    <h2>Sell Maui or keep it?</h2>
-
-                    <div className="decision-grid">
-                        <div className="decision-card">
-                            <span>Potential gross proceeds</span>
-                            <strong>~$180k</strong>
-                            <p>
-                                Based on current resale asking prices and the
-                                working benchmarks above.
-                            </p>
-                        </div>
-
-                        <div className="decision-card">
-                            <span>Maintenance eliminated</span>
-                            <strong>~$22k / year</strong>
-                            <p>
-                                Recurring maintenance that would no longer be
-                                owed if all Maui ownership is sold.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="callout">
-                        <div className="callout-title">Important</div>
-
-                        <p>
-                            These are <strong>asking prices</strong>, not
-                            guaranteed sale prices or net proceeds. Selling
-                            costs, negotiation, closing costs, and transfer fees
-                            could reduce the amount ultimately received.
-                        </p>
-                    </div>
-                </section>
-
-                <footer>
-                    <p>
-                        Resale data sourced from current RedWeek listings.
-                        Values shown are working estimates for comparison
-                        purposes.
-                    </p>
-                </footer>
+                </section>                
+               
             </main>
         </div>
     );
