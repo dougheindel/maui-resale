@@ -83,8 +83,6 @@ function App() {
             </table>
           </div>
 
-          <div className="fine-print"><strong>* Important:</strong> Week 30 is being modeled at the Week 29 benchmark for the working scenario. It should be verified with an actual Week 30 listing before treating $90k as a firm resale valuation. Asking prices are not guaranteed sale prices or net proceeds.</div>
-
         </section>
         
         <section className="section">
