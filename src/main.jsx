@@ -74,6 +74,30 @@ function App() {
           </div>
         </section>
 
+        <section className="section valuation">
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">03 · The math</div>
+              <h2>Working valuation</h2>
+            </div>
+          </div>
+
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Interest</th><th>Benchmark</th><th>Annual maintenance</th></tr></thead>
+              <tbody>
+                <tr><td>HRC Week 29</td><td>~$40,000</td><td>~$4,500</td></tr>
+                <tr><td>HRC Week 30</td><td>~$40,000*</td><td>~$4,500</td></tr>
+                <tr><td>Nanea 1BR Resort View</td><td>~$10,000</td><td>~$2,000</td></tr>
+                <tr className="total"><td>Total</td><td>~$90,000*</td><td>~$11,000 / year</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="fine-print"><strong>* Important:</strong> Week 30 is being modeled at the Week 29 benchmark for the working scenario. It should be verified with an actual Week 30 listing before treating $90k as a firm resale valuation. Asking prices are not guaranteed sale prices or net proceeds.</div>
+
+        </section>
+        
         <section className="section">
           <div className="section-head">
             <div>
@@ -102,29 +126,6 @@ function App() {
           <a className="wide-link" href={naneaSearch} target="_blank" rel="noreferrer">Open all Nanea filtered comps <ArrowUpRight size={16} /></a>
         </section>
 
-        <section className="section valuation">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">03 · The math</div>
-              <h2>Working valuation</h2>
-            </div>
-          </div>
-
-          <div className="table-wrap">
-            <table>
-              <thead><tr><th>Interest</th><th>Benchmark</th><th>Annual maintenance</th></tr></thead>
-              <tbody>
-                <tr><td>HRC Week 29</td><td>~$40,000</td><td>~$4,500</td></tr>
-                <tr><td>HRC Week 30</td><td>~$40,000*</td><td>~$4,500</td></tr>
-                <tr><td>Nanea 1BR Resort View</td><td>~$10,000</td><td>~$2,000</td></tr>
-                <tr className="total"><td>Total</td><td>~$90,000*</td><td>~$11,000 / year</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="fine-print"><strong>* Important:</strong> Week 30 is being modeled at the Week 29 benchmark for the working scenario. It should be verified with an actual Week 30 listing before treating $90k as a firm resale valuation. Asking prices are not guaranteed sale prices or net proceeds.</div>
-
-        </section>
       </main>
 
       <footer>Prepared from current RedWeek resale listings. This is a market snapshot, not an appraisal.</footer>
