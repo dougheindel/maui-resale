@@ -48,7 +48,6 @@ function App() {
         <section className="hero">
           <div className="eyebrow">Maui resale review · October 2026</div>
           <h1>What are the Maui timeshares worth?</h1>
-          <p className="lede">A clean look at the current resale market, using the closest available RedWeek comps rather than broad or unrelated listings.</p>
           <div className="hero-rule" />
           <div className="source-row">
             <span>Source: current RedWeek resale listings</span>
