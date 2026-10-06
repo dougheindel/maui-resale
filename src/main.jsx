@@ -237,7 +237,7 @@ function App() {
 
                 <tr>
                   <td>
-                    <strong>HRC</strong>
+                    <strong>Hyatt</strong>
                   </td>
 
                   <td>29 + 30</td>
@@ -259,7 +259,7 @@ function App() {
 
                 <tr>
                   <td>
-                    <strong>Nanea</strong>
+                    <strong>Westin</strong>
                   </td>
 
                   <td>29 + 30</td>
