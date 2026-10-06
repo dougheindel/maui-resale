@@ -7,8 +7,8 @@ const hrcSearch = 'https://www.redweek.com/resort/P6386-hyatt-vacation-club-at-k
 const naneaSearch = 'https://www.redweek.com/resort/P6462-the-westin-nanea-ocean-villas/timeshare-resales?type=resales&available_type=by_week&unit_type_id=223&use=Annual&ownership_type=Deeded&bedrooms=1&sleeps=4'
 
 const hrcComps = [
-  { label: 'Week 29 · 2BR · Ocean View', price: '$40,000', meta: 'Annual · Deeded · $4,343 maint.', id: 'R1526872', href: 'https://www.redweek.com/posting/R1526872', direct: true },
   { label: 'Week 27 · 2BR · Ocean View', price: '$45,000', meta: 'Annual · Deeded · $4,200 maint.', id: 'R747727', href: 'https://www.redweek.com/posting/R747727' },
+  { label: 'Week 29 · 2BR · Ocean View', price: '$40,000', meta: 'Annual · Deeded · $4,343 maint.', id: 'R1526872', href: 'https://www.redweek.com/posting/R1526872', direct: true },
   { label: 'Week 29 · 2BR · Oceanfront', price: '$64,500', meta: 'Annual · Deeded · $1,873 maint.', id: 'R1326347', href: 'https://www.redweek.com/posting/R1326347', note: 'Oceanfront, so not apples-to-apples.' },
 ]
 
@@ -124,13 +124,6 @@ function App() {
 
           <div className="fine-print"><strong>* Important:</strong> Week 30 is being modeled at the Week 29 benchmark for the working scenario. It should be verified with an actual Week 30 listing before treating $90k as a firm resale valuation. Asking prices are not guaranteed sale prices or net proceeds.</div>
 
-          <div className="bottom-callout">
-            <div>
-              <div className="eyebrow">The bigger question</div>
-              <h3>Sell the Maui ownership or keep paying for it?</h3>
-            </div>
-            <p>If everything is sold, the upside isn't just the resale proceeds. It also removes roughly <strong>$11k of recurring annual maintenance</strong>.</p>
-          </div>
         </section>
       </main>
 
