@@ -207,7 +207,7 @@ function App() {
 
                                     <td>2 timeshares</td>
 
-                                    <td>~$40,000 / week*</td>
+                                    <td>~$40,000 / week</td>
 
                                     <td>~$18,000 / year</td>
 
