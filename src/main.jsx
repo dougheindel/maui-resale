@@ -49,11 +49,6 @@ function App() {
           <div className="eyebrow">Maui resale review · October 2026</div>
           <h1>What are the Maui timeshares worth?</h1>
           <div className="hero-rule" />
-          <div className="source-row">
-            <span>Source: current RedWeek resale listings</span>
-            <a href={hrcSearch} target="_blank" rel="noreferrer">HRC filtered search <ExternalLink size={14} /></a>
-            <a href={naneaSearch} target="_blank" rel="noreferrer">Nanea filtered search <ExternalLink size={14} /></a>
-          </div>
         </section>
 
         <section className="stats">
@@ -98,7 +93,7 @@ function App() {
               <div className="eyebrow">Hyatt</div>
               <h2>Hyatt Vacation Club at Ka'anapali Beach</h2>
             </div>
-            <p>The Week 29 ocean-view listing at $40k is the cleanest current comp.</p>
+            <a href={hrcSearch} target="_blank" rel="noreferrer">HRC filtered search <ExternalLink size={14} /></a>
           </div>
           <div className="cards">{hrcComps.map((c) => <CompCard key={c.id} comp={c} />)}</div>
           <div className="callout">
@@ -114,7 +109,7 @@ function App() {
               <div className="eyebrow">Westin</div>
               <h2>The Westin Nanea Ocean Villas</h2>
             </div>
-            <p>The $10k resort-view listing is the closest direct comp.</p>
+            <a href={naneaSearch} target="_blank" rel="noreferrer">Nanea filtered search <ExternalLink size={14} /></a>                        
           </div>
           <div className="cards">{naneaComps.map((c) => <CompCard key={c.id} comp={c} />)}</div>
           <a className="wide-link" href={naneaSearch} target="_blank" rel="noreferrer">Open all Nanea filtered comps <ArrowUpRight size={16} /></a>
