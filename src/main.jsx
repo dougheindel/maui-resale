@@ -252,13 +252,8 @@ function App() {
                     </div>
                 </section>
 
-                {/* HRC */}
+                {/* HYATT */}
                 <section className="section">
-                    <SectionHeader
-                        title="Hyatt Vacation Club at Ka'anapali Beach"
-                        href={hrcSearch}
-                        linkLabel="HRC filtered search"
-                    />
 
                     <div className="cards">
                         {hrcComps.map((comp) => (
@@ -277,13 +272,8 @@ function App() {
                     </a>
                 </section>
 
-                {/* NANEA */}
+                {/* WESTIN */}
                 <section className="section">
-                    <SectionHeader
-                        title="The Westin Nanea Ocean Villas"
-                        href={naneaSearch}
-                        linkLabel="Nanea filtered search"
-                    />
 
                     <div className="cards">
                         {naneaComps.map((comp) => (
