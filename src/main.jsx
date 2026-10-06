@@ -127,7 +127,7 @@ function App() {
                 {/* HERO */}
                 <section className="hero">
                     <div className="eyebrow">
-                        Maui resale review · October 2026
+                        Maui resale review
                     </div>
 
                     <h1>
@@ -170,8 +170,6 @@ function App() {
                 <section className="section valuation">
                     <div className="section-head">
                         <div>
-                            <div className="eyebrow">At a glance</div>
-
                             <h2>Ownership & valuation</h2>
                         </div>
                     </div>
