@@ -268,7 +268,7 @@ function App() {
                                 />
 
                                 <BenchmarkSlider
-                                    label="Westin Nanea"
+                                    label="Westin"
                                     value={naneaBenchmark}
                                     min={5000}
                                     max={10000}
