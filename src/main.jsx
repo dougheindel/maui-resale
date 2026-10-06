@@ -313,7 +313,7 @@ function App() {
                         </a>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <div className="flex flex-col gap-4">
                         {hrcComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
                         ))}
@@ -350,7 +350,7 @@ function App() {
                         </a>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="flex flex-col gap-4">
                         {naneaComps.map((comp) => (
                             <CompCard key={comp.id} comp={comp} />
                         ))}
