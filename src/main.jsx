@@ -164,14 +164,6 @@ function App() {
                             Westin: ~$4k
                         </small>
                     </div>
-
-                    <div className="stat-card">
-                        <span>Potential annual savings</span>
-
-                        <strong>~$22k</strong>
-
-                        <small>If all Maui ownership is sold</small>
-                    </div>
                 </section>
 
                 {/* OWNERSHIP / VALUATION */}
