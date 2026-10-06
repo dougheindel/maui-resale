@@ -179,8 +179,11 @@ function App() {
     const [hrcBenchmark, setHrcBenchmark] = useState(40000);
     const [naneaBenchmark, setNaneaBenchmark] = useState(10000);
 
-    const hrcGross = hrcBenchmark * 4;
-    const naneaGross = naneaBenchmark * 2;
+    const hrcWeeks = 4;
+    const naneaWeeks = 1;
+
+    const hrcGross = hrcBenchmark * hrcWeeks;
+    const naneaGross = naneaBenchmark * naneaWeeks;
     const totalGross = hrcGross + naneaGross;
 
     return (
@@ -212,10 +215,10 @@ function App() {
                         </strong>
 
                         <small className="mt-3 block text-sm leading-6 text-zinc-400">
-                            Hyatt: 4 weeks × ~$
+                            Hyatt: {hrcWeeks} weeks × ~$
                             {hrcBenchmark.toLocaleString()}
                             <br />
-                            Westin: 2 weeks × ~$
+                            Westin: {naneaWeeks} week × ~$
                             {naneaBenchmark.toLocaleString()}
                         </small>
                     </div>
@@ -232,7 +235,7 @@ function App() {
                         <small className="mt-3 block text-sm leading-6 text-zinc-500">
                             Hyatt: ~$18k
                             <br />
-                            Westin: ~$4k
+                            Westin: ~$2k
                         </small>
                     </div>
                 </section>
@@ -268,7 +271,7 @@ function App() {
                                 />
 
                                 <BenchmarkSlider
-                                    label="Westin"
+                                    label="Westin Nanea"
                                     value={naneaBenchmark}
                                     min={5000}
                                     max={10000}
@@ -344,7 +347,7 @@ function App() {
                                     </td>
 
                                     <td className="px-5 py-5 text-zinc-600">
-                                        29 + 30
+                                        29
                                     </td>
 
                                     <td className="px-5 py-5 text-zinc-600">
@@ -356,12 +359,12 @@ function App() {
                                     </td>
 
                                     <td className="px-5 py-5 text-zinc-600">
-                                        ~$4,000 / year
+                                        ~$2,000 / year
                                     </td>
 
                                     <td className="px-5 py-5">
                                         <strong>
-                                            ~${naneaGross.toLocaleString()}
+                                            ~${naneaGross.toLocaleString()}*
                                         </strong>
                                     </td>
                                 </tr>
@@ -372,7 +375,7 @@ function App() {
                                     </td>
 
                                     <td className="px-5 py-5">
-                                        <strong>6 weeks</strong>
+                                        <strong>5 weeks</strong>
                                     </td>
 
                                     <td className="px-5 py-5">
@@ -384,7 +387,7 @@ function App() {
                                     </td>
 
                                     <td className="px-5 py-5">
-                                        <strong>~$22,000 / year</strong>
+                                        <strong>~$20,000 / year</strong>
                                     </td>
 
                                     <td className="px-5 py-5">
