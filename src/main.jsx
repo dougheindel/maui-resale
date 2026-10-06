@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import {
@@ -128,7 +128,31 @@ function CompCard({ comp }) {
     );
 }
 
+function BenchmarkInput({ value, onChange }) {
+    return (
+        <div className="flex items-center gap-1.5">
+            <span className="text-zinc-500">~$</span>
+            <input
+                type="number"
+                min="0"
+                step="1000"
+                value={value}
+                onChange={(e) => onChange(Number(e.target.value))}
+                className="w-28 rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-sm font-medium text-zinc-900 outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-100"
+            />
+            <span className="whitespace-nowrap text-zinc-500">/ week</span>
+        </div>
+    );
+}
+
 function App() {
+    const [hrcBenchmark, setHrcBenchmark] = useState(40000);
+    const [naneaBenchmark, setNaneaBenchmark] = useState(10000);
+
+    const hrcGross = hrcBenchmark * 4;
+    const naneaGross = naneaBenchmark * 2;
+    const totalGross = hrcGross + naneaGross;
+
     return (
         <div className="min-h-screen bg-white text-zinc-900">
             <main className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:px-10">
@@ -154,13 +178,15 @@ function App() {
                         </span>
 
                         <strong className="mt-2 block text-4xl font-semibold tracking-tight sm:text-5xl">
-                            ~$180k
+                            ~${Math.round(totalGross / 1000)}k
                         </strong>
 
                         <small className="mt-3 block text-sm leading-6 text-zinc-400">
-                            Hyatt: 4 weeks × ~$40k
+                            Hyatt: 4 weeks × ~$
+                            {hrcBenchmark.toLocaleString()}
                             <br />
-                            Westin: 2 weeks × ~$10k
+                            Westin: 2 weeks × ~$
+                            {naneaBenchmark.toLocaleString()}
                         </small>
                     </div>
 
@@ -203,7 +229,7 @@ function App() {
                                         Count
                                     </th>
                                     <th className="px-5 py-4 font-medium text-zinc-500">
-                                        Benchmark
+                                        Benchmark / week
                                     </th>
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Annual maintenance
@@ -219,20 +245,30 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Hyatt</strong>
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         29 + 30
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         2 timeshares
                                     </td>
-                                    <td className="px-5 py-5 text-zinc-600">
-                                        ~$40,000 / week
+
+                                    <td className="px-5 py-5">
+                                        <BenchmarkInput
+                                            value={hrcBenchmark}
+                                            onChange={setHrcBenchmark}
+                                        />
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$18,000 / year
                                     </td>
+
                                     <td className="px-5 py-5">
-                                        <strong>~$160,000*</strong>
+                                        <strong>
+                                            ~${hrcGross.toLocaleString()}*
+                                        </strong>
                                     </td>
                                 </tr>
 
@@ -240,20 +276,30 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Westin</strong>
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         29 + 30
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         1 timeshare
                                     </td>
-                                    <td className="px-5 py-5 text-zinc-600">
-                                        ~$10,000 / week
+
+                                    <td className="px-5 py-5">
+                                        <BenchmarkInput
+                                            value={naneaBenchmark}
+                                            onChange={setNaneaBenchmark}
+                                        />
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-600">
                                         ~$4,000 / year
                                     </td>
+
                                     <td className="px-5 py-5">
-                                        <strong>~$20,000</strong>
+                                        <strong>
+                                            ~${naneaGross.toLocaleString()}
+                                        </strong>
                                     </td>
                                 </tr>
 
@@ -261,20 +307,27 @@ function App() {
                                     <td className="px-5 py-5">
                                         <strong>Total</strong>
                                     </td>
+
                                     <td className="px-5 py-5">
                                         <strong>6 weeks</strong>
                                     </td>
+
                                     <td className="px-5 py-5">
                                         <strong>3 timeshares</strong>
                                     </td>
+
                                     <td className="px-5 py-5 text-zinc-500">
                                         —
                                     </td>
+
                                     <td className="px-5 py-5">
                                         <strong>~$22,000 / year</strong>
                                     </td>
+
                                     <td className="px-5 py-5">
-                                        <strong>~$180,000*</strong>
+                                        <strong>
+                                            ~${totalGross.toLocaleString()}*
+                                        </strong>
                                     </td>
                                 </tr>
                             </tbody>
@@ -298,7 +351,7 @@ function App() {
                         ))}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="mt-5 flex flex-wrap items-center gap-4">
                         <a
                             href={hrcSearch}
                             target="_blank"
@@ -308,7 +361,7 @@ function App() {
                             HRC filtered search
                             <ExternalLink size={14} />
                         </a>
-                    
+
                         <a
                             href={hrcHistorical}
                             target="_blank"
@@ -318,7 +371,7 @@ function App() {
                             Historical sales
                             <ExternalLink size={14} />
                         </a>
-                    </div>                    
+                    </div>
                 </section>
 
                 {/* WESTIN */}
@@ -337,7 +390,7 @@ function App() {
                         ))}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="mt-5 flex flex-wrap items-center gap-4">
                         <a
                             href={naneaSearch}
                             target="_blank"
@@ -347,7 +400,7 @@ function App() {
                             Nanea filtered search
                             <ExternalLink size={14} />
                         </a>
-                    
+
                         <a
                             href={naneaHistorical}
                             target="_blank"
@@ -357,7 +410,7 @@ function App() {
                             Historical sales
                             <ExternalLink size={14} />
                         </a>
-                    </div>                    
+                    </div>
                 </section>
 
             </main>
