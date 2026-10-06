@@ -301,16 +301,6 @@ function App() {
                         ))}
                     </div>
 
-                    <div className="callout">
-                        <div className="callout-title">Nanea benchmark</div>
-
-                        <p>
-                            <strong>~$10,000 per week</strong> is the closest
-                            current comp because the listing is a 1BR, annual,
-                            deeded, high-season ownership with resort view.
-                        </p>
-                    </div>
-
                     <a
                         className="wide-link"
                         href={naneaSearch}
