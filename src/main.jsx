@@ -75,12 +75,6 @@ function App() {
         </section>
 
         <section className="section valuation">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">03 · The math</div>
-              <h2>Working valuation</h2>
-            </div>
-          </div>
 
           <div className="table-wrap">
             <table>
@@ -101,8 +95,8 @@ function App() {
         <section className="section">
           <div className="section-head">
             <div>
-              <div className="eyebrow">01 · Hyatt</div>
-              <h2>HRC Maui</h2>
+              <div className="eyebrow">Hyatt</div>
+              <h2>Hyatt Vacation Club at Ka'anapali Beach</h2>
             </div>
             <p>The Week 29 ocean-view listing at $40k is the cleanest current comp.</p>
           </div>
@@ -117,8 +111,8 @@ function App() {
         <section className="section">
           <div className="section-head">
             <div>
-              <div className="eyebrow">02 · Westin</div>
-              <h2>Nanea</h2>
+              <div className="eyebrow">Westin</div>
+              <h2>The Westin Nanea Ocean Villas</h2>
             </div>
             <p>The $10k resort-view listing is the closest direct comp.</p>
           </div>
