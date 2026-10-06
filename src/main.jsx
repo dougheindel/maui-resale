@@ -136,7 +136,7 @@ function BenchmarkSlider({
     onChange,
 }) {
     return (
-        <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+        <div>
             <div className="flex items-end justify-between gap-4">
                 <div>
                     <div className="text-sm font-medium text-zinc-500">
@@ -252,33 +252,32 @@ function App() {
                                 <h2 className="text-lg font-semibold tracking-tight text-zinc-900">
                                     Adjust benchmark
                                 </h2>
+
                                 <p className="mt-1 text-sm text-zinc-500">
                                     Set the estimated resale value per week.
                                 </p>
                             </div>
-                    
+
                             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                                 <BenchmarkSlider
                                     label="Hyatt"
                                     value={hrcBenchmark}
                                     min={19000}
                                     max={99000}
-                                    step={1000}
                                     onChange={setHrcBenchmark}
                                 />
-                    
+
                                 <BenchmarkSlider
                                     label="Westin Nanea"
                                     value={naneaBenchmark}
                                     min={5000}
                                     max={10000}
-                                    step={1000}
                                     onChange={setNaneaBenchmark}
                                 />
                             </div>
                         </div>
                     </section>
-                    
+
                     {/* TABLE */}
                     <div className="overflow-x-auto rounded-2xl border border-zinc-200">
                         <table className="w-full min-w-[800px] text-sm">
@@ -287,18 +286,23 @@ function App() {
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Ownership
                                     </th>
+
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Weeks
                                     </th>
+
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Count
                                     </th>
+
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Benchmark
                                     </th>
+
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Annual maintenance
                                     </th>
+
                                     <th className="px-5 py-4 font-medium text-zinc-500">
                                         Gross benchmark
                                     </th>
