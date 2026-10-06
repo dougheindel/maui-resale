@@ -307,13 +307,6 @@ function App() {
             </table>
           </div>
 
-          <p className="table-note">
-            *The $40k HRC benchmark comes from the current
-            Week 29 2BR ocean-view listing. Week 30 should
-            be verified with a direct current comp before
-            treating the $180k figure as a firm valuation.
-          </p>
-
         </section>
 
         {/* HRC */}
